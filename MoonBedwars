@@ -4,7 +4,7 @@ loadstring(game:HttpGet("https://pastebin.com/raw/PRvL4Fib"))()
 wait()
 local KnockbackTable = debug.getupvalue(require(game:GetService("ReplicatedStorage").TS.damage["knockback-util"]).KnockbackUtil.calculateKnockbackVelocity, 1)
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Moon 1.0", "DarkTheme")
+local Window = Library.CreateLib("Noboline B3.6", "GrapeTheme")
 local lplr = game.Players.LocalPlayer
 local Combat = Window:NewTab("Combat")
 local Movement = Window:NewTab("Movement")
@@ -66,8 +66,8 @@ CombatSection:NewToggle("Velocity","Reduces knockback taken",function(state)
 end)
 
 MovementSection:NewDropdown("Speed", "DropdownInf", {"HeatSeeker", "CFrame", "Disabled"}, function(currentOption)
-    if currentOption == "HeatSeeker" then
-        _G.SpeedHS = true
+	if currentOption == "HeatSeeker" then
+		_G.SpeedHS = true
 
 		while _G.SpeedHS do
 			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 57
@@ -76,8 +76,8 @@ MovementSection:NewDropdown("Speed", "DropdownInf", {"HeatSeeker", "CFrame", "Di
 			wait(0.7)
 		end
 
-        elseif currentOption == "CFrame" then
-            Speed = 0.2 
+	elseif currentOption == "CFrame" then
+		Speed = 0.2 
 
 		_G.Speed = true
 
@@ -100,8 +100,8 @@ MovementSection:NewDropdown("Speed", "DropdownInf", {"HeatSeeker", "CFrame", "Di
 			wait()
 		end
 
-    elseif currentOption == "Disabled" then
-        Speed = 0.2 
+	elseif currentOption == "Disabled" then
+		Speed = 0.2 
 
 		_G.Speed = false
 
@@ -123,7 +123,7 @@ MovementSection:NewDropdown("Speed", "DropdownInf", {"HeatSeeker", "CFrame", "Di
 			end;
 			wait()
 		end
-        _G.SpeedHS = false
+		_G.SpeedHS = false
 
 		while _G.SpeedHS do
 			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 40
@@ -132,7 +132,7 @@ MovementSection:NewDropdown("Speed", "DropdownInf", {"HeatSeeker", "CFrame", "Di
 			wait(0.7)
 		end
 
-    end
+	end
 end)
 
 MovementSection:NewButton("DamageFly | Damc", "FastFly", function()
@@ -175,7 +175,6 @@ MovementSection:NewKeybind("Fly1 | More Reliable", "2 seconds", Enum.KeyCode.R, 
 	e.CFrame = e.CFrame - Vector3.new(0,5.2,0)
 	e.Anchored = true
 	e.Transparency = 1
-	workspace.Gravity = 40
 
 	local function PlayerTouched(Part)
 		local Parent = Part.Parent
@@ -196,7 +195,6 @@ MovementSection:NewKeybind("Fly2 | Less Reliable", "3 seconds", Enum.KeyCode.Z, 
 	e.CFrame = e.CFrame - Vector3.new(0,4.6,0)
 	e.Anchored = true
 	e.Transparency = 1
-	workspace.Gravity = 80
 
 	local function PlayerTouched(Part)
 		local Parent = Part.Parent
@@ -240,66 +238,77 @@ MovementSection:NewKeybind("DamageLessHighJump", "DamageHighJump", Enum.KeyCode.
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 500, 0)
 end)
 
-MovementSection:NewKeybind("LongJump | Gravity", "Gravity", Enum.KeyCode.J, function()
+MovementSection:NewKeybind("LongJump | Gravity", "Gravity", Enum.KeyCode.L, function()
     game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
 	game.Workspace.Gravity = 10
 	wait(2.2)
 	game.Workspace.Gravity = 192.6
 end)
 
+MovementSection:NewKeybind("OldVapeLongJump", "OldVapeLongJump", Enum.KeyCode.J, function()
+    
+	game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+	wait(0.9)
+	game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+	wait(0.9)
+	game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+	wait(0.9)
+	game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+	wait(0.9)
+	game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+end)
+
 MovementSection:NewToggle("AntiVoid | Velocity", "Velocity", function(state)
-    if state then
-    local e = Instance.new("Part",workspace)
-	e.Size = Vector3.new(99999999,2,999999999999)
-	e.Position = Vector3.new(0,27,0)
-	e.Anchored = true
-    e.BrickColor = BrickColor.new("Royal purple")
-    e.Transparency = 0.5
+	if state then
+		local e = Instance.new("Part",workspace)
+		e.Size = Vector3.new(99999999,2,999999999999)
+		e.Position = Vector3.new(0,27,0)
+		e.Anchored = true
+		e.BrickColor = BrickColor.new("Royal purple")
+		e.Transparency = 0.5
 
 
-	local function PlayerTouched(Part)
-		local Parent = Part.Parent
-		if game.Players:GetPlayerFromCharacter(Parent) then
-			local bodyvelo = Instance.new("BodyVelocity",Parent.HumanoidRootPart)
-			bodyvelo.Velocity = Vector3.new(0,500,0)
-			game.Workspace.Gravity = 0
-			task.wait(0.3)
-			bodyvelo:Destroy()
-			game.Workspace.Gravity = 196.2
+		local function PlayerTouched(Part)
+			local Parent = Part.Parent
+			if game.Players:GetPlayerFromCharacter(Parent) then
+				local bodyvelo = Instance.new("BodyVelocity",Parent.HumanoidRootPart)
+				bodyvelo.Velocity = Vector3.new(0,500,0)
+				task.wait(0.3)
+				bodyvelo:Destroy()
 
+			end
 		end
-	end
 
-	e.Touched:connect(PlayerTouched)
-    else
-        print("cringe")
-    end
+		e.Touched:connect(PlayerTouched)
+	else
+		print("cringe")
+	end
 end)
 
 MovementSection:NewToggle("AntiVoid | SmallTP", "SmallTP", function(state)
-    if state then
-    local e = Instance.new("Part",workspace)
-	e.Size = Vector3.new(99999999,2,999999999999)
-	e.Position = Vector3.new(0,27,0)
-	e.Anchored = true
-    e.BrickColor = BrickColor.new("Royal purple")
-    e.Transparency = 0.5
+	if state then
+		local e = Instance.new("Part",workspace)
+		e.Size = Vector3.new(99999999,2,999999999999)
+		e.Position = Vector3.new(0,27,0)
+		e.Anchored = true
+		e.BrickColor = BrickColor.new("Royal purple")
+		e.Transparency = 0.5
 
 
-	local function PlayerTouched(Part)
-		local Parent = Part.Parent
-		if game.Players:GetPlayerFromCharacter(Parent) then
-			for i = 1,100 do wait()
-				Parent.HumanoidRootPart.CFrame = Parent.HumanoidRootPart.CFrame + Vector3.new(0,0.5,0)
+		local function PlayerTouched(Part)
+			local Parent = Part.Parent
+			if game.Players:GetPlayerFromCharacter(Parent) then
+				for i = 1,100 do wait()
+					Parent.HumanoidRootPart.CFrame = Parent.HumanoidRootPart.CFrame + Vector3.new(0,0.5,0)
+				end
+
 			end
-
 		end
-	end
 
-	e.Touched:connect(PlayerTouched)
-    else
-        print("cringe")
-    end
+		e.Touched:connect(PlayerTouched)
+	else
+		print("cringe")
+	end
 end)
 
 MovementSection:NewButton("NoFall", "NoFall", function()
@@ -417,4 +426,40 @@ BypassesSection:NewButton("TP Player | Damc", "TP Player", function()
 
 
 	part:Destroy()
+end)
+
+BypassesSection:NewButton("ACBypasser", "ACBypasser", function()
+	local lplr = game.Players.LocalPlayer
+	local cam = workspace.CurrentCamera
+	local oldchar
+	local clone
+
+	oldchar = lplr.Character
+	oldchar.Archivable = true
+	clone = oldchar:Clone()
+	oldchar.PrimaryPart.Anchored = false
+
+	local humc = oldchar.Humanoid:Clone()
+	humc.Parent = lplr.Character
+	game:GetService("RunService").Stepped:connect(function()
+		local mag = (clone.PrimaryPart.Position - oldchar.PrimaryPart.Position).Magnitude
+		if mag >= 13 then
+			oldchar:SetPrimaryPartCFrame(clone.PrimaryPart.CFrame)
+			wait(0.15)
+			clone:SetPrimaryPartCFrame(oldchar.PrimaryPart.CFrame)
+			wait(0.15)
+			oldchar:SetPrimaryPartCFrame(clone.PrimaryPart.CFrame)
+		end
+	end)
+	pcall(function()
+		oldchar.PrimaryPart:GetPropertyChangedSignal("CFrame"):connect(function()
+			clone:SetPrimaryPartCFrame(oldchar.PrimaryPart.CFrame)
+		end)
+	end)
+
+	cam.CameraSubject = clone.Humanoid 
+	clone.Parent = workspace
+	lplr.Character = clone
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 34
+	game.Workspace.Gravity = 10
 end)
