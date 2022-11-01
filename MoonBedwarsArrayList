@@ -1,0 +1,226 @@
+local Modules = Instance.new("ScreenGui")
+local ACBypass = Instance.new("TextLabel")
+local KillAura = Instance.new("TextLabel")
+local AntiVoidTP = Instance.new("TextLabel")
+local DamageLessTP = Instance.new("TextLabel")
+local NoFall = Instance.new("TextLabel")
+local Fly1 = Instance.new("TextLabel")
+local AntiVoidVelo = Instance.new("TextLabel")
+local OldLongJump = Instance.new("TextLabel")
+local HighJumpVELO = Instance.new("TextLabel")
+local DamageFly = Instance.new("TextLabel")
+local AutoToxic = Instance.new("TextLabel")
+local TPAura = Instance.new("TextLabel")
+
+--Properties:
+
+Modules.Name = "Modules"
+Modules.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Modules.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ACBypass.Name = "ACBypass"
+ACBypass.Parent = Modules
+ACBypass.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ACBypass.BackgroundTransparency = 1.000
+ACBypass.Position = UDim2.new(0.864097416, 0, 0.0137157068, 0)
+ACBypass.Size = UDim2.new(0, 200, 0, 50)
+ACBypass.Font = Enum.Font.SourceSans
+ACBypass.Text = "AnticheatBypasser"
+ACBypass.TextColor3 = Color3.fromRGB(0, 0, 0)
+ACBypass.TextSize = 27.000
+
+KillAura.Name = "KillAura"
+KillAura.Parent = Modules
+KillAura.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KillAura.BackgroundTransparency = 1.000
+KillAura.Position = UDim2.new(0.864773452, 0, 0.326683283, 0)
+KillAura.Size = UDim2.new(0, 200, 0, 50)
+KillAura.Font = Enum.Font.SourceSans
+KillAura.Text = "KillAura"
+KillAura.TextColor3 = Color3.fromRGB(0, 0, 0)
+KillAura.TextSize = 27.000
+
+AntiVoidTP.Name = "AntiVoid | TP"
+AntiVoidTP.Parent = Modules
+AntiVoidTP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AntiVoidTP.BackgroundTransparency = 1.000
+AntiVoidTP.Position = UDim2.new(0.864097357, 0, 0.199501231, 0)
+AntiVoidTP.Size = UDim2.new(0, 200, 0, 50)
+AntiVoidTP.Font = Enum.Font.SourceSans
+AntiVoidTP.Text = "AntiVoid | TP"
+AntiVoidTP.TextColor3 = Color3.fromRGB(0, 0, 0)
+AntiVoidTP.TextSize = 27.000
+
+DamageLessTP.Name = "DamageLessTP"
+DamageLessTP.Parent = Modules
+DamageLessTP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DamageLessTP.BackgroundTransparency = 1.000
+DamageLessTP.Position = UDim2.new(0.864097416, 0, 0.0847880319, 0)
+DamageLessTP.Size = UDim2.new(0, 200, 0, 50)
+DamageLessTP.Font = Enum.Font.SourceSans
+DamageLessTP.Text = "DamageLessTP"
+DamageLessTP.TextColor3 = Color3.fromRGB(0, 0, 0)
+DamageLessTP.TextSize = 27.000
+
+NoFall.Name = "NoFall"
+NoFall.Parent = Modules
+NoFall.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NoFall.BackgroundTransparency = 1.000
+NoFall.Position = UDim2.new(0.864773512, 0, 0.405236959, 0)
+NoFall.Size = UDim2.new(0, 200, 0, 50)
+NoFall.Font = Enum.Font.SourceSans
+NoFall.Text = "NoFall"
+NoFall.TextColor3 = Color3.fromRGB(0, 0, 0)
+NoFall.TextSize = 27.000
+
+Fly1.Name = "Fly1"
+Fly1.Parent = Modules
+Fly1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Fly1.BackgroundTransparency = 1.000
+Fly1.Position = UDim2.new(0.864097357, 0, 0.443890274, 0)
+Fly1.Size = UDim2.new(0, 200, 0, 50)
+Fly1.Font = Enum.Font.SourceSans
+Fly1.Text = "Fly1"
+Fly1.TextColor3 = Color3.fromRGB(0, 0, 0)
+Fly1.TextSize = 27.000
+
+AntiVoidVelo.Name = "AntiVoid | Velo"
+AntiVoidVelo.Parent = Modules
+AntiVoidVelo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AntiVoidVelo.BackgroundTransparency = 1.000
+AntiVoidVelo.Position = UDim2.new(0.864097297, 0, 0.160847858, 0)
+AntiVoidVelo.Size = UDim2.new(0, 200, 0, 50)
+AntiVoidVelo.Font = Enum.Font.SourceSans
+AntiVoidVelo.Text = "AntiVoid | Velo"
+AntiVoidVelo.TextColor3 = Color3.fromRGB(0, 0, 0)
+AntiVoidVelo.TextSize = 27.000
+
+OldLongJump.Name = "OldLongJump"
+OldLongJump.Parent = Modules
+OldLongJump.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OldLongJump.BackgroundTransparency = 1.000
+OldLongJump.Position = UDim2.new(0.864773452, 0, 0.123441398, 0)
+OldLongJump.Size = UDim2.new(0, 200, 0, 50)
+OldLongJump.Font = Enum.Font.SourceSans
+OldLongJump.Text = "OldLongJump"
+OldLongJump.TextColor3 = Color3.fromRGB(0, 0, 0)
+OldLongJump.TextSize = 27.000
+
+HighJumpVELO.Name = "HighJumpVELO"
+HighJumpVELO.Parent = Modules
+HighJumpVELO.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HighJumpVELO.BackgroundTransparency = 1.000
+HighJumpVELO.Position = UDim2.new(0.864773512, 0, 0.051122196, 0)
+HighJumpVELO.Size = UDim2.new(0, 200, 0, 50)
+HighJumpVELO.Font = Enum.Font.SourceSans
+HighJumpVELO.Text = "HighJump | Velo"
+HighJumpVELO.TextColor3 = Color3.fromRGB(0, 0, 0)
+HighJumpVELO.TextSize = 27.000
+
+DamageFly.Name = "DamageFly"
+DamageFly.Parent = Modules
+DamageFly.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DamageFly.BackgroundTransparency = 1.000
+DamageFly.Position = UDim2.new(0.864097297, 0, 0.239401489, 0)
+DamageFly.Size = UDim2.new(0, 200, 0, 50)
+DamageFly.Font = Enum.Font.SourceSans
+DamageFly.Text = "DamageFly"
+DamageFly.TextColor3 = Color3.fromRGB(0, 0, 0)
+DamageFly.TextSize = 27.000
+
+AutoToxic.Name = "AutoToxic"
+AutoToxic.Parent = Modules
+AutoToxic.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AutoToxic.BackgroundTransparency = 1.000
+AutoToxic.Position = UDim2.new(0.864773452, 0, 0.281795472, 0)
+AutoToxic.Size = UDim2.new(0, 200, 0, 50)
+AutoToxic.Font = Enum.Font.SourceSans
+AutoToxic.Text = "AutoToxic"
+AutoToxic.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoToxic.TextSize = 27.000
+
+TPAura.Name = "TPAura"
+TPAura.Parent = Modules
+TPAura.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TPAura.BackgroundTransparency = 1.000
+TPAura.Position = UDim2.new(0.863421261, 0, 0.366583556, 0)
+TPAura.Size = UDim2.new(0, 200, 0, 50)
+TPAura.Font = Enum.Font.SourceSans
+TPAura.Text = "TPAura"
+TPAura.TextColor3 = Color3.fromRGB(0, 0, 0)
+TPAura.TextSize = 27.000
+
+-- Scripts:
+
+local function EJTWUG_fake_script() -- ACBypass.AC 
+	local script = Instance.new('LocalScript', ACBypass)
+
+	local r = { Color3.fromRGB(101, 28, 190); Color3.fromRGB(122, 33, 230); Color3.fromRGB(135, 36, 255); Color3.fromRGB(88, 23, 167); Color3.fromRGB(15, 29, 158); Color3.fromRGB(240, 65, 255); Color3.fromRGB(160, 43, 170)} local info = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0) script.Parent.TextColor3 = r[1] i = 1 while true do local tween = game:GetService("TweenService"):Create(script.Parent, info, { TextColor3 = r[i]}) tween:Play() repeat wait() until tween.Completed wait(0.1) if i == #r then i = 1 else i = i + 1 end end
+end
+coroutine.wrap(EJTWUG_fake_script)()
+local function JKQYRUZ_fake_script() -- KillAura.AC 
+	local script = Instance.new('LocalScript', KillAura)
+
+	local r = { Color3.fromRGB(101, 28, 190); Color3.fromRGB(122, 33, 230); Color3.fromRGB(135, 36, 255); Color3.fromRGB(88, 23, 167); Color3.fromRGB(15, 29, 158); Color3.fromRGB(240, 65, 255); Color3.fromRGB(160, 43, 170)} local info = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0) script.Parent.TextColor3 = r[1] i = 1 while true do local tween = game:GetService("TweenService"):Create(script.Parent, info, { TextColor3 = r[i]}) tween:Play() repeat wait() until tween.Completed wait(0.1) if i == #r then i = 1 else i = i + 1 end end
+end
+coroutine.wrap(JKQYRUZ_fake_script)()
+local function MFCUJA_fake_script() -- AntiVoidTP.AC 
+	local script = Instance.new('LocalScript', AntiVoidTP)
+
+	local r = { Color3.fromRGB(101, 28, 190); Color3.fromRGB(122, 33, 230); Color3.fromRGB(135, 36, 255); Color3.fromRGB(88, 23, 167); Color3.fromRGB(15, 29, 158); Color3.fromRGB(240, 65, 255); Color3.fromRGB(160, 43, 170)} local info = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0) script.Parent.TextColor3 = r[1] i = 1 while true do local tween = game:GetService("TweenService"):Create(script.Parent, info, { TextColor3 = r[i]}) tween:Play() repeat wait() until tween.Completed wait(0.1) if i == #r then i = 1 else i = i + 1 end end
+end
+coroutine.wrap(MFCUJA_fake_script)()
+local function FOKAG_fake_script() -- DamageLessTP.AC 
+	local script = Instance.new('LocalScript', DamageLessTP)
+
+	local r = { Color3.fromRGB(101, 28, 190); Color3.fromRGB(122, 33, 230); Color3.fromRGB(135, 36, 255); Color3.fromRGB(88, 23, 167); Color3.fromRGB(15, 29, 158); Color3.fromRGB(240, 65, 255); Color3.fromRGB(160, 43, 170)} local info = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0) script.Parent.TextColor3 = r[1] i = 1 while true do local tween = game:GetService("TweenService"):Create(script.Parent, info, { TextColor3 = r[i]}) tween:Play() repeat wait() until tween.Completed wait(0.1) if i == #r then i = 1 else i = i + 1 end end
+end
+coroutine.wrap(FOKAG_fake_script)()
+local function LOTKE_fake_script() -- NoFall.AC 
+	local script = Instance.new('LocalScript', NoFall)
+
+	local r = { Color3.fromRGB(101, 28, 190); Color3.fromRGB(122, 33, 230); Color3.fromRGB(135, 36, 255); Color3.fromRGB(88, 23, 167); Color3.fromRGB(15, 29, 158); Color3.fromRGB(240, 65, 255); Color3.fromRGB(160, 43, 170)} local info = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0) script.Parent.TextColor3 = r[1] i = 1 while true do local tween = game:GetService("TweenService"):Create(script.Parent, info, { TextColor3 = r[i]}) tween:Play() repeat wait() until tween.Completed wait(0.1) if i == #r then i = 1 else i = i + 1 end end
+end
+coroutine.wrap(LOTKE_fake_script)()
+local function OMMRI_fake_script() -- Fly1.AC 
+	local script = Instance.new('LocalScript', Fly1)
+
+	local r = { Color3.fromRGB(101, 28, 190); Color3.fromRGB(122, 33, 230); Color3.fromRGB(135, 36, 255); Color3.fromRGB(88, 23, 167); Color3.fromRGB(15, 29, 158); Color3.fromRGB(240, 65, 255); Color3.fromRGB(160, 43, 170)} local info = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0) script.Parent.TextColor3 = r[1] i = 1 while true do local tween = game:GetService("TweenService"):Create(script.Parent, info, { TextColor3 = r[i]}) tween:Play() repeat wait() until tween.Completed wait(0.1) if i == #r then i = 1 else i = i + 1 end end
+end
+coroutine.wrap(OMMRI_fake_script)()
+local function OISZZN_fake_script() -- AntiVoidVelo.AC 
+	local script = Instance.new('LocalScript', AntiVoidVelo)
+
+	local r = { Color3.fromRGB(101, 28, 190); Color3.fromRGB(122, 33, 230); Color3.fromRGB(135, 36, 255); Color3.fromRGB(88, 23, 167); Color3.fromRGB(15, 29, 158); Color3.fromRGB(240, 65, 255); Color3.fromRGB(160, 43, 170)} local info = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0) script.Parent.TextColor3 = r[1] i = 1 while true do local tween = game:GetService("TweenService"):Create(script.Parent, info, { TextColor3 = r[i]}) tween:Play() repeat wait() until tween.Completed wait(0.1) if i == #r then i = 1 else i = i + 1 end end
+end
+coroutine.wrap(OISZZN_fake_script)()
+local function CFQLKSS_fake_script() -- OldLongJump.AC 
+	local script = Instance.new('LocalScript', OldLongJump)
+
+	local r = { Color3.fromRGB(101, 28, 190); Color3.fromRGB(122, 33, 230); Color3.fromRGB(135, 36, 255); Color3.fromRGB(88, 23, 167); Color3.fromRGB(15, 29, 158); Color3.fromRGB(240, 65, 255); Color3.fromRGB(160, 43, 170)} local info = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0) script.Parent.TextColor3 = r[1] i = 1 while true do local tween = game:GetService("TweenService"):Create(script.Parent, info, { TextColor3 = r[i]}) tween:Play() repeat wait() until tween.Completed wait(0.1) if i == #r then i = 1 else i = i + 1 end end
+end
+coroutine.wrap(CFQLKSS_fake_script)()
+local function ZMAQALT_fake_script() -- HighJumpVELO.AC 
+	local script = Instance.new('LocalScript', HighJumpVELO)
+
+	local r = { Color3.fromRGB(101, 28, 190); Color3.fromRGB(122, 33, 230); Color3.fromRGB(135, 36, 255); Color3.fromRGB(88, 23, 167); Color3.fromRGB(15, 29, 158); Color3.fromRGB(240, 65, 255); Color3.fromRGB(160, 43, 170)} local info = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0) script.Parent.TextColor3 = r[1] i = 1 while true do local tween = game:GetService("TweenService"):Create(script.Parent, info, { TextColor3 = r[i]}) tween:Play() repeat wait() until tween.Completed wait(0.1) if i == #r then i = 1 else i = i + 1 end end
+end
+coroutine.wrap(ZMAQALT_fake_script)()
+local function OIOWQF_fake_script() -- DamageFly.AC 
+	local script = Instance.new('LocalScript', DamageFly)
+
+	local r = { Color3.fromRGB(101, 28, 190); Color3.fromRGB(122, 33, 230); Color3.fromRGB(135, 36, 255); Color3.fromRGB(88, 23, 167); Color3.fromRGB(15, 29, 158); Color3.fromRGB(240, 65, 255); Color3.fromRGB(160, 43, 170)} local info = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0) script.Parent.TextColor3 = r[1] i = 1 while true do local tween = game:GetService("TweenService"):Create(script.Parent, info, { TextColor3 = r[i]}) tween:Play() repeat wait() until tween.Completed wait(0.1) if i == #r then i = 1 else i = i + 1 end end
+end
+coroutine.wrap(OIOWQF_fake_script)()
+local function RLNPM_fake_script() -- AutoToxic.AC 
+	local script = Instance.new('LocalScript', AutoToxic)
+
+	local r = { Color3.fromRGB(101, 28, 190); Color3.fromRGB(122, 33, 230); Color3.fromRGB(135, 36, 255); Color3.fromRGB(88, 23, 167); Color3.fromRGB(15, 29, 158); Color3.fromRGB(240, 65, 255); Color3.fromRGB(160, 43, 170)} local info = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0) script.Parent.TextColor3 = r[1] i = 1 while true do local tween = game:GetService("TweenService"):Create(script.Parent, info, { TextColor3 = r[i]}) tween:Play() repeat wait() until tween.Completed wait(0.1) if i == #r then i = 1 else i = i + 1 end end
+end
+coroutine.wrap(RLNPM_fake_script)()
+local function QCIE_fake_script() -- TPAura.AC 
+	local script = Instance.new('LocalScript', TPAura)
+
+	local r = { Color3.fromRGB(101, 28, 190); Color3.fromRGB(122, 33, 230); Color3.fromRGB(135, 36, 255); Color3.fromRGB(88, 23, 167); Color3.fromRGB(15, 29, 158); Color3.fromRGB(240, 65, 255); Color3.fromRGB(160, 43, 170)} local info = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0) script.Parent.TextColor3 = r[1] i = 1 while true do local tween = game:GetService("TweenService"):Create(script.Parent, info, { TextColor3 = r[i]}) tween:Play() repeat wait() until tween.Completed wait(0.1) if i == #r then i = 1 else i = i + 1 end end
+end
+coroutine.wrap(QCIE_fake_script)()
