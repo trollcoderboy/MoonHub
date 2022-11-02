@@ -136,7 +136,7 @@ MovementSection:NewDropdown("Speed", "DropdownInf", {"HeatSeeker", "CFrame", "Di
 end)
 
 MovementSection:NewButton("NormalSpeed | For Bypasser", "ezezezeez", function()
-	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 56
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 63
 end)
 
 
