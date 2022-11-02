@@ -430,36 +430,40 @@ end)
 
 BypassesSection:NewButton("ACBypasser", "ACBypasser", function()
 	local lplr = game.Players.LocalPlayer
-	local cam = workspace.CurrentCamera
-	local oldchar
-	local clone
+local cam = workspace.CurrentCamera
+local oldchar
+local clone
 
-	oldchar = lplr.Character
-	oldchar.Archivable = true
-	clone = oldchar:Clone()
-	oldchar.PrimaryPart.Anchored = false
+oldchar = lplr.Character
+oldchar.Archivable = true
+clone = oldchar:Clone()
+oldchar.PrimaryPart.Anchored = false
 
-	local humc = oldchar.Humanoid:Clone()
-	humc.Parent = lplr.Character
-	game:GetService("RunService").Stepped:connect(function()
-		local mag = (clone.PrimaryPart.Position - oldchar.PrimaryPart.Position).Magnitude
-		if mag >= 13 then
-			oldchar:SetPrimaryPartCFrame(clone.PrimaryPart.CFrame)
-			wait(0.15)
-			clone:SetPrimaryPartCFrame(oldchar.PrimaryPart.CFrame)
-			wait(0.15)
-			oldchar:SetPrimaryPartCFrame(clone.PrimaryPart.CFrame)
-		end
-	end)
-	pcall(function()
-		oldchar.PrimaryPart:GetPropertyChangedSignal("CFrame"):connect(function()
-			clone:SetPrimaryPartCFrame(oldchar.PrimaryPart.CFrame)
-		end)
-	end)
+local humc = oldchar.Humanoid:Clone()
+humc.Parent = lplr.Character
+game:GetService("RunService").Stepped:connect(function()
+    local mag = (clone.PrimaryPart.Position - oldchar.PrimaryPart.Position).Magnitude
+    if mag >= 8 then
+        oldchar:SetPrimaryPartCFrame(clone.PrimaryPart.CFrame)
+    end
+end)
+pcall(function()
+    oldchar.PrimaryPart:GetPropertyChangedSignal("CFrame"):connect(function()
+        clone:SetPrimaryPartCFrame(oldchar.PrimaryPart.CFrame - Vector3.new(0,1.85,0)) 
+    end)
+end)
 
-	cam.CameraSubject = clone.Humanoid 
-	clone.Parent = workspace
-	lplr.Character = clone
-	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 34
-	game.Workspace.Gravity = 10
+cam.CameraSubject = clone.Humanoid 
+clone.Parent = workspace
+lplr.Character = clone
+for _,v in pairs(lplr.Character:GetChildren()) do
+    v.Transparency = 1
+    if v:IsA("Hat") then
+        v:Destroy()
+    elseif v:IsA("Shirt") then
+        v:Destroy()
+    elseif v:IsA("Pants") then
+        v:Destroy()
+    end
+end
 end)
